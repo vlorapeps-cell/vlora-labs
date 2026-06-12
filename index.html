@@ -1,46 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vlora Labs</title>
-    <style>
-        body{
-            margin:0;
-            font-family:Arial,sans-serif;
-            background:#050505;
-            color:white;
-            text-align:center;
-            padding:100px 20px;
-        }
-        h1{
-            font-size:60px;
-            color:#00c8ff;
-            margin-bottom:10px;
-        }
-        p{
-            font-size:22px;
-            color:#d0d0d0;
-        }
-        .btn{
-            display:inline-block;
-            margin-top:30px;
-            padding:15px 30px;
-            background:#00c8ff;
-            color:black;
-            text-decoration:none;
-            border-radius:8px;
-            font-weight:bold;
-        }
-    </style>
-</head>
-<body>
-    <h1>VLORA LABS</h1>
-    <p>Precision. Quality. Innovation.</p>
-    <p>Official website coming soon.</p>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vlora Labs | Precision. Quality. Innovation.</title>
 
-    <a class="btn" href="https://t.me/+dWhh1D7T8_JmM2M8">
-        Contact on Telegram
-    </a>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#050505;
+    color:white;
+    line-height:1.6;
+}
+
+header{
+    background:#0a0a0a;
+    border-bottom:1px solid #1f1f1f;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+    color:#00c8ff;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+}
+
+.hero{
+    min-height:80vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+}
+
+.hero h1{
+    font-size:70px;
+    color:#00c8ff;
+}
+
+.hero p{
+    max-width:700px;
+    margin-top:20px;
+    font-size:22px;
+    color:#d0d0d0;
+}
+
+.buttons{
+    margin-top:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:15px 30px;
+    margin:10px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.primary{
+    background:#00c8ff;
+    color:black;
+}
+
+.secondary{
+    border:1px solid #00c8ff;
+    color:#00c8ff;
+}
+
+.section{
+    padding:80px 8%;
+}
+
+.section h2{
+    text-align:center;
+    margin-bottom:40px;
+    color:#00c8ff;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#111;
+    padding:25px;
+    border-radius:12px;
+    border:1px solid #222;
+}
+
+.card h3{
+    color:#00c8ff;
+    margin-bottom:10px;
+}
+
+.contact{
+    text-align:center;
+}
+
+.contact a{
+    color:#00c8ff;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    border-top:1px solid #1f1f1f;
+    color:#999;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">VLORA LABS</div>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#quality">Quality</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+
+    <h1>VLORA LABS</h1>
+
+    <p>
+        Precision. Quality. Innovation.
+        Supporting scientific excellence through professional laboratory standards,
+        transparent documentation, and dedicated customer support.
+    </p>
+
+    <div class="buttons">
+        <a class="btn primary" href="https://t.me/VloraLabsOfficial" target="_blank">
+            Telegram Community
+        </a>
+
+        <a class="btn secondary" href="#contact">
+            Contact Us
+        </a>
+    </div>
+
+</section>
+
+<section id="about" class="section">
+
+    <h2>About Vlora Labs</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Scientific Standards</h3>
+            <p>
+                Dedicated to maintaining rigorous laboratory practices and
+                transparent documentation.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Professional Support</h3>
+            <p>
+                Responsive customer service and clear communication channels.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Global Reach</h3>
+            <p>
+                Building a community focused on quality, reliability, and trust.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="quality" class="section">
+
+    <h2>Quality & Documentation</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Transparency</h3>
+            <p>
+                Documentation and verification procedures designed to support
+                confidence and accountability.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Quality Control</h3>
+            <p>
+                Structured quality-focused processes and professional standards.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Customer Confidence</h3>
+            <p>
+                Commitment to professionalism and long-term relationships.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="contact" class="section contact">
+
+    <h2>Contact</h2>
+
+    <p><strong>Telegram Group:</strong></p>
+    <p>
+        <a href="https://t.me/VloraLabsOfficial" target="_blank">
+            @VloraLabsOfficial
+        </a>
+    </p>
+
+    <br>
+
+    <p><strong>Telegram Contact:</strong></p>
+    <p>
+        <a href="https://t.me/VloraLabOwner" target="_blank">
+            @VloraLabOwner
+        </a>
+    </p>
+
+    <br>
+
+    <p><strong>Email:</strong></p>
+    <p>vlorapeps@gmail.com</p>
+
+    <br>
+
+    <p><strong>WhatsApp:</strong></p>
+    <p>+971 50 230 7917</p>
+
+</section>
+
+<footer>
+    © 2026 Vlora Labs — Precision. Quality. Innovation.
+</footer>
+
 </body>
 </html>
