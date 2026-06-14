@@ -698,5 +698,35 @@ localStorage.setItem("cart",JSON.stringify(cart));
 }
 
 </script>
+  <div id="cartDrawer" style="
+position:fixed;
+top:0;
+right:-400px;
+width:400px;
+max-width:90%;
+height:100%;
+background:white;
+box-shadow:-5px 0 20px rgba(0,0,0,.15);
+z-index:99999;
+padding:25px;
+transition:.3s;
+overflow-y:auto;
+">
+
+<h2>🛒 Shopping Cart</h2>
+
+<div id="drawerItems"></div>
+
+<div id="drawerTotal"
+style="
+margin-top:20px;
+font-size:24px;
+font-weight:bold;
+color:#00B8FF;
+">
+Total: AED 0
+</div>
+
+</div>
 </body>
 </html>
