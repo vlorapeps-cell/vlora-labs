@@ -493,7 +493,11 @@ Add To Cart
 <h3>Tesamorelin 10mg</h3>
 <p>AED 390</p>
 <br>
-<button class="btn primary">Add To Cart</button>
+<button
+class="btn primary"
+onclick="event.preventDefault();event.stopPropagation();addToCart('Tesamorelin 10mg',390,'products/tesamorelin.jpg')">
+Add To Cart
+</button>
 </div>
 </a>
 
