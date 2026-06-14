@@ -1225,6 +1225,31 @@ loadCartDrawer();
 
 loadCartDrawer();
 
+function showAddedMessage(){
+
+const msg = document.createElement("div");
+
+msg.innerHTML = "✓ Added to Cart";
+
+msg.style.position = "fixed";
+msg.style.top = "20px";
+msg.style.right = "20px";
+msg.style.background = "#22c55e";
+msg.style.color = "white";
+msg.style.padding = "12px 18px";
+msg.style.borderRadius = "10px";
+msg.style.fontWeight = "bold";
+msg.style.zIndex = "999999";
+msg.style.boxShadow = "0 8px 25px rgba(0,0,0,.15)";
+
+document.body.appendChild(msg);
+
+setTimeout(() => {
+msg.remove();
+}, 2000);
+
+}
+
 </script>
   <div id="cartDrawer" style="
 position:fixed;
