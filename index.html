@@ -763,8 +763,27 @@ transition:.3s;
 overflow-y:auto;
 ">
 
+<div style="
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+">
+
 <h2>🛒 Shopping Cart</h2>
 
+<button
+onclick="document.getElementById('cartDrawer').style.right='-400px'"
+style="
+border:none;
+background:none;
+font-size:28px;
+cursor:pointer;
+">
+✕
+</button>
+
+</div>
 <div id="drawerItems"></div>
 
 <div id="drawerTotal"
