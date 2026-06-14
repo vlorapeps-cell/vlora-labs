@@ -1001,7 +1001,22 @@ cart.push({
 name:name,
 price:price,
 image:image,
-quantity:1
+quantity:1,
+reviews:
+name === "GHK-Cu 50mg" ? "12 Reviews" :
+name === "Tesamorelin 10mg" ? "3 Reviews" :
+name === "Retatrutide 10mg" ? "12 Reviews" :
+name === "MOTS-c 10mg" ? "4 Reviews" :
+name === "MT-1 10mg" ? "2 Reviews" :
+"37 Reviews",
+
+dosage:
+name === "GHK-Cu 50mg" ? "50mg" :
+name === "Tesamorelin 10mg" ? "10mg" :
+name === "Retatrutide 10mg" ? "10mg" :
+name === "MOTS-c 10mg" ? "10mg" :
+name === "MT-1 10mg" ? "10mg" :
+"10mL"
 });
 
 }
