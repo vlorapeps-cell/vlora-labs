@@ -721,7 +721,9 @@ let total = 0;
 let itemCount = 0;
   
 cart.forEach(item=>{
-
+  
+itemCount += item.quantity;
+  
 total += item.price * item.quantity;
 
 html += `
