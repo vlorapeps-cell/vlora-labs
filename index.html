@@ -754,12 +754,41 @@ gap:10px;
 margin:8px 0;
 ">
 
-<button onclick="changeQty('${item.name}',-1)">-</button>
+<button
+onclick="changeQty('${item.name}',-1)"
+style="
+width:32px;
+height:32px;
+border:1px solid #e5e7eb;
+background:white;
+border-radius:8px;
+cursor:pointer;
+font-weight:bold;
+">
+−
+</button>
 
-<span>${item.quantity}</span>
+<span style="
+min-width:25px;
+text-align:center;
+font-weight:bold;
+">
+${item.quantity}
+</span>
 
-<button onclick="changeQty('${item.name}',1)">+</button>
-
+<button
+onclick="changeQty('${item.name}',1)"
+style="
+width:32px;
+height:32px;
+border:1px solid #e5e7eb;
+background:white;
+border-radius:8px;
+cursor:pointer;
+font-weight:bold;
+">
++
+</button>
 </div>
 
 AED ${item.price * item.quantity}
