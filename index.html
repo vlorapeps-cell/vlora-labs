@@ -701,6 +701,52 @@ document.getElementById("cartDrawer").style.right="0";
 
 }
 
+function loadCartDrawer(){
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+let html = "";
+let total = 0;
+
+cart.forEach(item=>{
+
+total += item.price;
+
+html += `
+<div style="
+display:flex;
+align-items:center;
+gap:15px;
+margin:15px 0;
+">
+
+<img
+src="${item.image}"
+style="
+width:60px;
+height:60px;
+object-fit:cover;
+border-radius:10px;
+">
+
+<div>
+<strong>${item.name}</strong>
+<br>
+AED ${item.price}
+</div>
+
+</div>
+`;
+
+});
+
+document.getElementById("drawerItems").innerHTML = html;
+
+document.getElementById("drawerTotal").innerHTML =
+"Total: AED " + total;
+
+}
+
 </script>
   <div id="cartDrawer" style="
 position:fixed;
