@@ -521,7 +521,11 @@ Add To Cart
 <h3>MOTS-c 10mg</h3>
 <p>AED 220</p>
 <br>
-<button class="btn primary">Add To Cart</button>
+<button
+class="btn primary"
+onclick="event.preventDefault();event.stopPropagation();addToCart('MOTS-c 10mg',220,'products/motsc.jpg')">
+Add To Cart
+</button>
 </div>
 </a>
 
