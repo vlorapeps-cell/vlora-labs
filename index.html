@@ -516,7 +516,7 @@ AED 110
 <br>
 <button
 class="btn primary"
-onclick="addToCart('GHK-Cu 50mg',110,'products/ghkcu.jpg')">
+onclick="event.preventDefault();event.stopPropagation();addToCart('GHK-Cu 50mg',110,'products/ghkcu.jpg')"
 Add To Cart
 </button>
 </div>
