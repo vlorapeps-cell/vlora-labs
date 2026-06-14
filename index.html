@@ -695,6 +695,21 @@ image:image
 
 localStorage.setItem("cart",JSON.stringify(cart));
 
+loadCartDrawer();
+
+document.getElementById("cartDrawer").style.right="0";
+
+}
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+cart.push({
+name:name,
+price:price,
+image:image
+});
+
+localStorage.setItem("cart",JSON.stringify(cart));
+
 document.getElementById("cartDrawer").style.right="0";
 
 }
