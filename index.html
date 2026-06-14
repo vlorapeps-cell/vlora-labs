@@ -854,6 +854,29 @@ document.getElementById("drawerItems").innerHTML = html;
 
 document.getElementById("drawerTotal").innerHTML =
 "Subtotal: AED " + total;
+
+let freeShippingTarget = 1000;
+
+let progress = Math.min(
+(total / freeShippingTarget) * 100,
+100
+);
+
+document.getElementById("shippingProgress").style.width =
+progress + "%";
+
+if(total >= freeShippingTarget){
+
+document.getElementById("shippingText").innerHTML =
+"🎉 Free Shipping Unlocked for Abu Dhabi";
+
+}else{
+
+document.getElementById("shippingText").innerHTML =
+"AED " + (freeShippingTarget - total) +
+" left to unlock Free Shipping to Abu Dhabi";
+
+}
   
   document.getElementById("cartTitle").innerHTML =
 "🛒 Cart (" + itemCount + ")";
