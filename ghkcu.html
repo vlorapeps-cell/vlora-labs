@@ -407,6 +407,23 @@ Will order again in the future.
 </div>
 
 </div>
+<script>
 
+function addToCart(){
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+cart.push({
+name:"GHK-Cu 50mg",
+price:110
+});
+
+localStorage.setItem("cart",JSON.stringify(cart));
+
+alert("Added to cart!");
+
+}
+
+</script>
 </body>
 </html>
