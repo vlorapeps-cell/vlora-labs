@@ -751,7 +751,26 @@ border-radius:10px;
 
 <div>
 
+<div style="
+display:flex;
+justify-content:space-between;
+align-items:center;
+">
+
 <strong>${item.name}</strong>
+
+<span
+onclick="changeQty('${item.name}',-999)"
+style="
+cursor:pointer;
+color:#9ca3af;
+font-size:18px;
+font-weight:bold;
+">
+✕
+</span>
+
+</div>
 
 <div style="
 color:#f59e0b;
