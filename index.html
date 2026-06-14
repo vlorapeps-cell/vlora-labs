@@ -719,19 +719,6 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 let html = "";
 let total = 0;
 
-...
-document.getElementById("drawerTotal").innerHTML =
-"Total: AED " + total;
-
-}
-
-function changeQty(name,amount){
-
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-let html = "";
-let total = 0;
-
 cart.forEach(item=>{
 
 total += item.price * item.quantity;
