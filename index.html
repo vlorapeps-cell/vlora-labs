@@ -549,7 +549,11 @@ Add To Cart
 <h3>BAC Water 10mL</h3>
 <p>AED 55</p>
 <br>
-<button class="btn primary">Add To Cart</button>
+<button
+class="btn primary"
+onclick="event.preventDefault();event.stopPropagation();addToCart('BAC Water 10mL',55,'products/bacwater.jpg')">
+Add To Cart
+</button>
 </div>
 </a>
 
