@@ -741,11 +741,26 @@ border-radius:10px;
 ">
 
 <div>
+
 <strong>${item.name}</strong>
-<br>
-Qty: ${item.quantity}
-<br>
+
+<div style="
+display:flex;
+align-items:center;
+gap:10px;
+margin:8px 0;
+">
+
+<button onclick="changeQty('${item.name}',-1)">-</button>
+
+<span>${item.quantity}</span>
+
+<button onclick="changeQty('${item.name}',1)">+</button>
+
+</div>
+
 AED ${item.price * item.quantity}
+
 </div>
 
 </div>
