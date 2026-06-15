@@ -183,7 +183,63 @@ appId: "1:885798615346:web:3513704c3c4fd291a2ff2b"
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
 
+document.getElementById("googleLogin").addEventListener("click", async () => {
+  try {
+    await signInWithPopup(auth, provider);
+    window.location.href = "index.html";
+  } catch (error) {
+    alert(error.message);
+  }
+});
+
+document.getElementById("emailContinue").addEventListener("click", async () => {
+
+  const email = document.getElementById("email").value;
+
+  if (!email) {
+    alert("Enter your email");
+    return;
+  }
+
+  const password = prompt("Enter your password");
+
+  if (!password) return;
+
+  try {
+
+    await signInWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+
+    window.location.href = "index.html";
+
+  } catch {
+
+    try {
+
+      await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+
+      window.location.href = "index.html";
+
+    } catch (error) {
+
+      alert(error.message);
+
+    }
+
+  }
+
+});
 </script>  
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 </body>
 </html>
