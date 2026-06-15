@@ -3,15 +3,65 @@
 <head>
 <title>My Account</title>
 </head>
+
 <body>
 
 <h1>My Account</h1>
 
-<p id="userEmail"></p>
+<p id="userEmail">Loading...</p>
 
 <button id="logout">
 Logout
 </button>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+
+import {
+getAuth,
+onAuthStateChanged,
+signOut
+} from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
+
+const firebaseConfig = {
+
+apiKey: "YOUR_API_KEY",
+authDomain: "vloralabs.firebaseapp.com",
+projectId: "vloralabs",
+storageBucket: "vloralabs.firebasestorage.app",
+messagingSenderId: "885798615346",
+appId: "1:885798615346:web:3513704c3c4fd291a2ff2b"
+
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+onAuthStateChanged(auth, (user) => {
+
+  if(user){
+
+    document.getElementById("userEmail").innerHTML =
+    user.email;
+
+  } else {
+
+    window.location.href = "login.html";
+
+  }
+
+});
+
+document.getElementById("logout").addEventListener("click", async () => {
+
+  await signOut(auth);
+
+  window.location.href = "login.html";
+
+});
+
+</script>
 
 </body>
 </html>
