@@ -203,9 +203,75 @@ document.getElementById("emailContinue").addEventListener("click", async () => {
     return;
   }
 
-  const password = prompt("Enter your password");
+<div id="passwordSection" style="
+display:none;
+margin-top:15px;
+">
 
-  if (!password) return;
+<input
+type="password"
+id="password"
+placeholder="Password"
+style="
+width:100%;
+padding:15px 20px;
+border:1px solid #d1d5db;
+border-radius:12px;
+font-size:16px;
+margin-bottom:15px;
+">
+
+<div style="
+display:flex;
+align-items:center;
+gap:8px;
+margin-bottom:15px;
+">
+
+<input
+type="checkbox"
+id="rememberMe">
+
+<label for="rememberMe">
+Remember me
+</label>
+
+</div>
+
+<button
+id="loginButton"
+style="
+width:100%;
+padding:15px;
+background:#00B8FF;
+color:white;
+border:none;
+border-radius:12px;
+font-weight:bold;
+font-size:16px;
+cursor:pointer;
+">
+Sign In
+</button>
+
+<div style="
+margin-top:15px;
+text-align:center;
+">
+
+<a
+href="#"
+style="
+color:#00B8FF;
+text-decoration:none;
+font-size:14px;
+">
+Lost your password?
+</a>
+
+</div>
+
+</div>
 
   try {
 
