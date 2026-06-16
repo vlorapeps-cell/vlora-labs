@@ -279,47 +279,177 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,.85);
+background:rgba(0,0,0,.75);
+backdrop-filter:blur(6px);
 display:flex;
 justify-content:center;
 align-items:center;
 z-index:99999;
+padding:20px;
 ">
 
 <div style="
 background:white;
+width:100%;
+max-width:520px;
 padding:40px;
-border-radius:20px;
+border-radius:30px;
 text-align:center;
-max-width:500px;
+box-shadow:0 25px 60px rgba(0,0,0,.25);
 ">
 
-<h2 style="color:#00B8FF;">
-Age Verification
+<div style="
+font-size:40px;
+margin-bottom:15px;
+">
+⚠️
+</div>
+
+<div style="
+letter-spacing:3px;
+font-size:13px;
+font-weight:bold;
+color:#6b7280;
+margin-bottom:15px;
+">
+AGE VERIFICATION REQUIRED
+</div>
+
+<h2 style="
+font-size:42px;
+color:#111827;
+margin-bottom:20px;
+">
+You must be 18+ to enter
 </h2>
 
-<br>
-
-<p>
-You must be at least 18 years old to enter this website.
+<p style="
+color:#6b7280;
+line-height:1.8;
+margin-bottom:30px;
+">
+Vlora Labs supplies research compounds intended strictly
+for laboratory and research use only.
+By entering, you confirm you are 18 years of age or older.
 </p>
 
-<br>
-
-<button onclick="enterSite()"
-style="
-background:#00B8FF;
-color:white;
-border:none;
-padding:15px 30px;
-border-radius:10px;
-cursor:pointer;
+<div style="
+display:flex;
+justify-content:center;
+gap:40px;
+margin-bottom:30px;
+flex-wrap:wrap;
 ">
-I am 18+
-</button>
+
+<div>
+<div style="
+font-size:30px;
+font-weight:bold;
+color:#00B8FF;
+">
+99%+
+</div>
+<div style="
+font-size:13px;
+color:#6b7280;
+">
+LAB TESTED
+</div>
+</div>
+
+<div>
+<div style="
+font-size:30px;
+font-weight:bold;
+color:#00B8FF;
+">
+RUO
+</div>
+<div style="
+font-size:13px;
+color:#6b7280;
+">
+RESEARCH ONLY
+</div>
+</div>
+
+<div>
+<div style="
+font-size:30px;
+font-weight:bold;
+color:#00B8FF;
+">
+18+
+</div>
+<div style="
+font-size:13px;
+color:#6b7280;
+">
+VERIFICATION
+</div>
+</div>
 
 </div>
 
+<button
+onclick="enterSite()"
+style="
+width:100%;
+background:#00B8FF;
+color:white;
+border:none;
+padding:18px;
+border-radius:50px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+margin-bottom:15px;
+">
+Enter Site →
+</button>
+
+<a
+href="https://google.com"
+style="
+display:block;
+margin-bottom:20px;
+color:#6b7280;
+text-decoration:none;
+">
+I am under 18
+</a>
+
+<label style="
+display:flex;
+justify-content:center;
+align-items:center;
+gap:10px;
+margin-bottom:25px;
+">
+
+<input
+type="checkbox"
+id="rememberAge"
+checked
+>
+
+Remember me for 30 days
+
+</label>
+
+<p style="
+font-size:13px;
+color:#6b7280;
+line-height:1.7;
+">
+By entering you agree to our
+<a href="terms.html">Terms of Service</a>
+and
+<a href="privacy.html">Privacy Policy</a>.
+Vlora Labs products are not intended for human consumption.
+</p>
+
+</div>
 </div>
 
 <header>
