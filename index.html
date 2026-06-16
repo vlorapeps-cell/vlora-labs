@@ -1878,7 +1878,51 @@ document.getElementById("popupSearch")
 
 if(search === ""){
 
-document.getElementById("searchResults").innerHTML = "";
+let html = "";
+
+products.forEach(product=>{
+
+html += `
+<a href="${product.page}"
+style="
+display:block;
+width:160px;
+text-decoration:none;
+color:black;
+">
+
+<img
+src="${product.image}"
+style="
+width:160px;
+height:160px;
+object-fit:cover;
+border-radius:10px;
+background:#f8fafc;
+">
+
+<div style="
+margin-top:8px;
+font-weight:bold;
+font-size:14px;
+">
+${product.name}
+</div>
+
+<div style="
+color:#6b7280;
+font-size:13px;
+margin-top:3px;
+">
+${product.price}
+</div>
+
+</a>
+`;
+
+});
+
+document.getElementById("searchResults").innerHTML = html;
 return;
 
 }
