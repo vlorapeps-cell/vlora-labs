@@ -167,10 +167,20 @@ const auth = getAuth(app);
 
 onAuthStateChanged(auth, (user) => {
 
-  if(user){
+if(user){
 
-    document.getElementById("userEmail").innerHTML =
-    user.email;
+  document.getElementById("userEmail").innerHTML =
+  user.email;
+
+  if(user.photoURL){
+
+    document.getElementById("userPhoto").src =
+    user.photoURL;
+
+    document.getElementById("userPhoto").style.display =
+    "block";
+
+  }
 
   } else {
 
