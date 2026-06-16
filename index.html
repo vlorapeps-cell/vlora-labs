@@ -314,6 +314,31 @@ justify-content:space-between !important;
 gap:5px !important;
 }
 }
+.marquee{
+background:#0f3ea9;
+color:white;
+overflow:hidden;
+white-space:nowrap;
+padding:10px 0;
+font-size:13px;
+font-weight:700;
+letter-spacing:1px;
+}
+
+.marquee-content{
+display:inline-block;
+padding-left:100%;
+animation:scrollText 18s linear infinite;
+}
+
+@keyframes scrollText{
+0%{
+transform:translateX(0);
+}
+100%{
+transform:translateX(-100%);
+}
+}
 </style>
 </head>
 
