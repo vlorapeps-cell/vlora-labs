@@ -1885,6 +1885,13 @@ document.getElementById("popupSearch")
 .value
 .toLowerCase();
 
+if(search === ""){
+
+document.getElementById("searchResults").innerHTML = "";
+return;
+
+}
+
 let html = "";
 
 products.forEach(product=>{
