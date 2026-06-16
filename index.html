@@ -1115,6 +1115,11 @@ WA
 <script>
 function enterSite(){
 
+const remember =
+document.getElementById("rememberAge");
+
+if(remember && remember.checked){
+
 const expiry =
 Date.now() + (30 * 24 * 60 * 60 * 1000);
 
@@ -1122,6 +1127,8 @@ localStorage.setItem(
 "ageVerifiedUntil",
 expiry
 );
+
+}
 
 document.getElementById("ageModal").style.display =
 "none";
