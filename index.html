@@ -1382,16 +1382,7 @@ function loadCartDrawer(){
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-let html = `
-<div style="
-width:100%;
-font-weight:bold;
-color:#6b7280;
-margin-bottom:10px;
-">
-Products
-</div>
-`;
+let html = "";
 let total = 0;
 let itemCount = 0;
   
