@@ -592,6 +592,63 @@ Cart (0)
 </nav>
 
 </header>
+<div id="searchModal" style="
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.5);
+z-index:99999;
+">
+
+<div style="
+background:white;
+width:90%;
+max-width:700px;
+margin:80px auto;
+border-radius:15px;
+padding:20px;
+">
+
+<div style="
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:20px;
+">
+
+<input
+type="text"
+id="popupSearch"
+placeholder="Search products..."
+onkeyup="searchProductsPopup()"
+style="
+flex:1;
+padding:15px;
+border:1px solid #ddd;
+border-radius:10px;
+">
+
+<button
+onclick="closeSearch()"
+style="
+border:none;
+background:none;
+font-size:22px;
+cursor:pointer;
+">
+✕
+</button>
+
+</div>
+
+<div id="searchResults"></div>
+
+</div>
+
+</div>
 <div class="marquee">
 <div class="marquee-content">
 
@@ -1784,6 +1841,115 @@ product.style.display = "none";
 }
 
 });
+
+}
+
+</script>
+<script>
+
+const products = [
+
+{
+name:"GHK-Cu 50mg",
+page:"ghkcu.html",
+image:"products/ghkcu.jpg"
+},
+
+{
+name:"Tesamorelin 10mg",
+page:"tesamorelin.html",
+image:"products/tesamorelin.jpg"
+},
+
+{
+name:"Retatrutide 10mg",
+page:"retatrutide.html",
+image:"products/retatrutide.jpg"
+},
+
+{
+name:"MOTS-c 10mg",
+page:"motsc.html",
+image:"products/motsc.jpg"
+},
+
+{
+name:"MT-1 10mg",
+page:"mt1.html",
+image:"products/mt1.jpg"
+},
+
+{
+name:"BAC Water 10mL",
+page:"bacwater.html",
+image:"products/bacwater.jpg"
+}
+
+];
+
+function openSearch(){
+
+document.getElementById("searchModal").style.display =
+"block";
+
+document.getElementById("popupSearch").focus();
+
+searchProductsPopup();
+
+}
+
+function closeSearch(){
+
+document.getElementById("searchModal").style.display =
+"none";
+
+}
+
+function searchProductsPopup(){
+
+const search =
+document.getElementById("popupSearch")
+.value
+.toLowerCase();
+
+let html = "";
+
+products.forEach(product=>{
+
+if(product.name.toLowerCase().includes(search)){
+
+html += `
+<a href="${product.page}"
+style="
+display:flex;
+align-items:center;
+gap:15px;
+padding:12px;
+text-decoration:none;
+color:black;
+border-bottom:1px solid #eee;
+">
+
+<img
+src="${product.image}"
+style="
+width:60px;
+height:60px;
+object-fit:cover;
+border-radius:8px;
+">
+
+<div>${product.name}</div>
+
+</a>
+`;
+
+}
+
+});
+
+document.getElementById("searchResults").innerHTML =
+html;
 
 }
 
