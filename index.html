@@ -985,9 +985,12 @@ WA
 <script>
 function enterSite(){
 
+const expiry =
+Date.now() + (30 * 24 * 60 * 60 * 1000);
+
 localStorage.setItem(
-"ageVerified",
-"true"
+"ageVerifiedUntil",
+expiry
 );
 
 document.getElementById("ageModal").style.display =
@@ -995,7 +998,10 @@ document.getElementById("ageModal").style.display =
 
 }
 
-if(localStorage.getItem("ageVerified") === "true"){
+const savedExpiry =
+localStorage.getItem("ageVerifiedUntil");
+
+if(savedExpiry && Date.now() < Number(savedExpiry)){
 
 document.getElementById("ageModal").style.display =
 "none";
