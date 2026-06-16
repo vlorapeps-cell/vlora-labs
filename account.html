@@ -4,15 +4,134 @@
 <title>My Account</title>
 </head>
 
-<body>
+<body style="
+font-family:Arial,Helvetica,sans-serif;
+background:#f8fafc;
+margin:0;
+">
 
-<h1>My Account</h1>
+<div style="
+max-width:900px;
+margin:60px auto;
+padding:20px;
+">
 
-<p id="userEmail">Loading...</p>
+<div style="
+background:white;
+border-radius:25px;
+padding:40px;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+">
 
-<button id="logout">
+<div style="text-align:center;">
+
+<img
+src="logo.png"
+style="
+height:120px;
+margin-bottom:15px;
+">
+
+<h1 style="
+color:#00B8FF;
+margin-bottom:10px;
+">
+My Account
+</h1>
+
+<p
+id="userEmail"
+style="
+color:#6b7280;
+font-size:18px;
+">
+Loading...
+</p>
+
+</div>
+
+<hr style="
+margin:30px 0;
+border:none;
+border-top:1px solid #e5e7eb;
+">
+
+<h2 style="color:#111827;">
+Account
+</h2>
+
+<div style="
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+margin-top:20px;
+">
+
+<div style="
+padding:20px;
+border:1px solid #e5e7eb;
+border-radius:15px;
+">
+📦 Orders
+</div>
+
+<div style="
+padding:20px;
+border:1px solid #e5e7eb;
+border-radius:15px;
+">
+📍 Addresses
+</div>
+
+<div style="
+padding:20px;
+border:1px solid #e5e7eb;
+border-radius:15px;
+">
+💬 Support
+</div>
+
+</div>
+
+<div style="
+margin-top:40px;
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+">
+
+<a
+href="index.html"
+style="
+background:#00B8FF;
+color:white;
+padding:15px 25px;
+border-radius:12px;
+text-decoration:none;
+font-weight:bold;
+">
+Continue Shopping
+</a>
+
+<button
+id="logout"
+style="
+background:white;
+border:2px solid #00B8FF;
+color:#00B8FF;
+padding:15px 25px;
+border-radius:12px;
+font-weight:bold;
+cursor:pointer;
+">
 Logout
 </button>
+
+</div>
+
+</div>
+
+</div>
 
 <script type="module">
 
