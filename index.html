@@ -1788,33 +1788,7 @@ accountLink.href = "login.html";
 });
 
 </script>
-const search =
-document.getElementById("searchInput")
-.value.toLowerCase();
 
-const products =
-document.querySelectorAll(".grid a");
-
-products.forEach(product => {
-
-const text =
-product.innerText.toLowerCase();
-
-if(text.includes(search)){
-
-product.style.display = "";
-
-}else{
-
-product.style.display = "none";
-
-}
-
-});
-
-}
-
-</script>
 <script>
 
 const products = [
