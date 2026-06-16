@@ -1870,37 +1870,40 @@ if(product.name.toLowerCase().includes(search)){
 html += `
 <a href="${product.page}"
 style="
-display:flex;
-align-items:center;
-gap:15px;
-padding:12px;
+display:inline-block;
+width:150px;
+margin:10px;
 text-decoration:none;
 color:black;
-border-bottom:1px solid #eee;
+vertical-align:top;
 ">
 
 <img
 src="${product.image}"
 style="
-width:60px;
-height:60px;
+width:150px;
+height:150px;
 object-fit:cover;
-border-radius:8px;
+border-radius:10px;
+border:1px solid #eee;
 ">
 
-<div>
-<div style="font-weight:bold;">
+<div style="
+margin-top:8px;
+font-weight:bold;
+font-size:14px;
+">
 ${product.name}
 </div>
 
 <div style="
 color:#6b7280;
-font-size:14px;
-margin-top:4px;
+font-size:13px;
+margin-top:3px;
 ">
 ${product.price}
 </div>
-</div>
+
 </a>
 `;
 
