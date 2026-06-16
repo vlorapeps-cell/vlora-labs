@@ -984,7 +984,22 @@ WA
 </a>
 <script>
 function enterSite(){
-document.getElementById("ageModal").style.display="none";
+
+localStorage.setItem(
+"ageVerified",
+"true"
+);
+
+document.getElementById("ageModal").style.display =
+"none";
+
+}
+
+if(localStorage.getItem("ageVerified") === "true"){
+
+document.getElementById("ageModal").style.display =
+"none";
+
 }
 </script>
 <script>
