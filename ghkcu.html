@@ -415,7 +415,11 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 cart.push({
 name:"GHK-Cu 50mg",
-price:110
+price:180,
+image:"products/ghkcu.jpg",
+quantity:1,
+reviews:4,
+dosage:"50mg"
 });
 
 localStorage.setItem("cart",JSON.stringify(cart));
