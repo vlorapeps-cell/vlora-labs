@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment | Vlora Labs</title>
+
+<style>
+
+body{
+font-family:Arial,sans-serif;
+background:#f8fafc;
+padding:40px;
+max-width:700px;
+margin:auto;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:15px;
+border:1px solid #e5e7eb;
+margin-bottom:20px;
+}
+
+button{
+width:100%;
+padding:15px;
+margin-top:15px;
+background:#00B8FF;
+color:white;
+border:none;
+border-radius:10px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+}
+
+h1{
+color:#00B8FF;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Payment Method</h1>
+
+<div class="card">
+
+<h3>Order Total</h3>
+
+<div id="total">
+AED 0
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Select Payment Method</h3>
+
+<button onclick="paypalPayment()">
+Pay with PayPal
+</button>
+
+<button onclick="applePayment()">
+Pay with Apple Pay
+</button>
+
+</div>
+
+<script>
+
+let cart =
+JSON.parse(localStorage.getItem("cart")) || [];
+
+let total = 0;
+
+cart.forEach(item=>{
+total += item.price * item.quantity;
+});
+
+document.getElementById("total").innerHTML =
+"AED " + total;
+
+function paypalPayment(){
+
+alert(
+"PayPal integration not connected yet."
+);
+
+}
+
+function applePayment(){
+
+alert(
+"Apple Pay integration not connected yet."
+);
+
+}
+
+</script>
+
+</body>
+</html>
