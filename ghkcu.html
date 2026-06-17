@@ -802,7 +802,12 @@ if(!name || !review){
 alert("Please fill all fields");
 return;
 }
+async function loadReviews(){
 
+document.getElementById("firebaseReviews").innerHTML =
+"Loading reviews...";
+
+}
 await addDoc(
 collection(db,"reviews"),
 {
