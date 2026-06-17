@@ -318,13 +318,11 @@ onclick="submitReview()">
 Submit Review
 </button>
 
+<br><br>
+<h2>Customer Reviews</h2>
 <div id="firebaseReviews">
 Loading reviews...
 </div>
-
-<br><br>
-<h2>Customer Reviews</h2>
-  
 <div style="
 background:white;
 padding:25px;
@@ -838,22 +836,47 @@ const data = doc.data();
 reviewsDiv.innerHTML += `
 <div style="
 background:white;
-padding:20px;
+padding:25px;
 border-radius:15px;
-margin-top:15px;
+margin-top:20px;
+box-shadow:0 4px 15px rgba(0,0,0,.05);
+max-width:500px;
 border:1px solid #e5e7eb;
 ">
 
 <div style="
-color:#f59e0b;
-font-size:20px;
+display:flex;
+align-items:center;
+gap:12px;
+margin-bottom:15px;
 ">
-${"★".repeat(data.rating)}
+
+<div style="
+width:45px;
+height:45px;
+border-radius:50%;
+background:#00B8FF;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:bold;
+">
+${data.name.charAt(0).toUpperCase()}
 </div>
 
+<div>
+<div style="color:#f59e0b;">
+${"★".repeat(data.rating)}
+</div>
 <strong>${data.name}</strong>
+</div>
 
-<p>${data.review}</p>
+</div>
+
+<p>
+${data.review}
+</p>
 
 </div>
 `;
