@@ -57,16 +57,30 @@ AED 0
 
 </div>
 
-<div class="card">
-
 <h3>Select Payment Method</h3>
 
 <button onclick="paypalPayment()">
-Pay with PayPal
+PayPal
 </button>
 
-<button onclick="applePayment()">
-Pay with Apple Pay
+<button onclick="applePay()">
+Apple Pay
+</button>
+
+<button onclick="creditCardPayment()">
+Credit / Debit Card
+</button>
+
+<button onclick="bankTransfer()">
+Bank Transfer
+</button>
+
+<button onclick="whatsappPayment()">
+WhatsApp Payment Arrangement
+</button>
+
+<button onclick="cashOnDelivery()">
+Cash on Delivery (+ AED 30)
 </button>
 
 </div>
@@ -87,16 +101,50 @@ document.getElementById("total").innerHTML =
 
 function paypalPayment(){
 
-alert(
-"PayPal integration not connected yet."
+window.open(
+"https://paypal.me/YOURPAYPALNAME",
+"_blank"
 );
 
 }
 
-function applePayment(){
+function applePay(){
 
 alert(
-"Apple Pay integration not connected yet."
+"Apple Pay will be available soon. Please choose WhatsApp Payment Arrangement for now."
+);
+
+}
+
+function creditCardPayment(){
+
+alert(
+"Credit Card payments coming soon."
+);
+
+}
+
+function bankTransfer(){
+
+alert(
+"Bank Transfer selected. We will send bank details after order confirmation."
+);
+
+}
+
+function whatsappPayment(){
+
+window.open(
+"https://wa.me/971502307917",
+"_blank"
+);
+
+}
+
+function cashOnDelivery(){
+
+alert(
+"Cash on Delivery selected. AED 30 COD fee will be added."
 );
 
 }
