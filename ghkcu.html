@@ -270,7 +270,57 @@ Certificate of Analysis and quality documentation available upon request.
 
 
   <br><br><br>
+<h3>Leave a Review</h3>
 
+<input
+id="reviewName"
+type="text"
+placeholder="Your Name"
+style="
+width:100%;
+padding:12px;
+margin-bottom:10px;
+border:1px solid #e5e7eb;
+border-radius:10px;
+">
+
+<select
+id="reviewRating"
+style="
+width:100%;
+padding:12px;
+margin-bottom:10px;
+border:1px solid #e5e7eb;
+border-radius:10px;
+">
+<option value="5">★★★★★ (5)</option>
+<option value="4">★★★★☆ (4)</option>
+<option value="3">★★★☆☆ (3)</option>
+<option value="2">★★☆☆☆ (2)</option>
+<option value="1">★☆☆☆☆ (1)</option>
+</select>
+
+<textarea
+id="reviewText"
+placeholder="Write your review..."
+style="
+width:100%;
+height:120px;
+padding:12px;
+border:1px solid #e5e7eb;
+border-radius:10px;
+margin-bottom:10px;
+"></textarea>
+
+<button
+class="btn"
+onclick="submitReview()">
+Submit Review
+</button>
+
+<div id="firebaseReviews"></div>
+
+<br><br>
 <h2>Customer Reviews</h2>
   
 <div style="
