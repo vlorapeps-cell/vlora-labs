@@ -629,6 +629,85 @@ document.getElementById("cartDrawer").style.right = "0";
 
 }
 
+<div id="cartDrawer" style="
+position:fixed;
+top:0;
+right:-400px;
+width:400px;
+max-width:90%;
+height:100%;
+background:white;
+box-shadow:-5px 0 20px rgba(0,0,0,.15);
+z-index:99999;
+padding:25px;
+transition:.3s;
+overflow-y:auto;
+">
+
+<div style="
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+">
+
+<h2 id="cartTitle">🛒 Cart (0)</h2>
+
+<button
+onclick="document.getElementById('cartDrawer').style.right='-400px'"
+style="
+border:none;
+background:none;
+font-size:28px;
+cursor:pointer;
+">
+✕
+</button>
+
+</div>
+
+<div id="shippingText" style="
+font-size:14px;
+font-weight:bold;
+margin-bottom:10px;
+">
+AED 1000 left to unlock Free Shipping
+</div>
+
+<div style="
+height:8px;
+background:#e5e7eb;
+border-radius:999px;
+overflow:hidden;
+margin-bottom:20px;
+">
+
+<div
+id="shippingProgress"
+style="
+width:0%;
+height:100%;
+background:#22c55e;
+">
+</div>
+
+</div>
+
+<div id="drawerItems"></div>
+
+<div
+id="drawerTotal"
+style="
+margin-top:20px;
+font-size:24px;
+font-weight:bold;
+color:#00B8FF;
+">
+Subtotal: AED 0
+</div>
+
+</div>
+ 
 </script>
 </body>
 </html>
