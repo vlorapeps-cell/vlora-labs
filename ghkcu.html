@@ -806,8 +806,46 @@ return;
 }
 async function loadReviews(){
 
-document.getElementById("firebaseReviews").innerHTML =
-"Loading reviews...";
+const reviewsDiv =
+document.getElementById("firebaseReviews");
+
+reviewsDiv.innerHTML = "";
+
+const q = query(
+collection(db,"reviews"),
+where("product","==","GHK-Cu 50mg")
+);
+
+const snap = await getDocs(q);
+
+snap.forEach(doc=>{
+
+const data = doc.data();
+
+reviewsDiv.innerHTML += `
+<div style="
+background:white;
+padding:20px;
+border-radius:15px;
+margin-top:15px;
+border:1px solid #e5e7eb;
+">
+
+<div style="
+color:#f59e0b;
+font-size:20px;
+">
+${"★".repeat(data.rating)}
+</div>
+
+<strong>${data.name}</strong>
+
+<p>${data.review}</p>
+
+</div>
+`;
+
+});
 
 }
 await addDoc(
@@ -826,7 +864,7 @@ document.getElementById("reviewName").value="";
 document.getElementById("reviewText").value="";
 
 }
-
+loadReviews();
 </script>
 <script>
 console.log("review test loaded");
