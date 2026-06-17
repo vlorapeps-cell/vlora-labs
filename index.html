@@ -1569,6 +1569,8 @@ loadCartDrawer();
 
 }
 
+window.addEventListener("load", () => {
+
 loadCartDrawer();
 
 const params = new URLSearchParams(window.location.search);
@@ -1578,6 +1580,8 @@ if(params.get("openCart") === "true"){
 document.getElementById("cartDrawer").style.right = "0";
 
 }
+
+});
 function showAddedMessage(){
 
 const msg = document.createElement("div");
