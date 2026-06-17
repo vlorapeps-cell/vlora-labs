@@ -577,6 +577,16 @@ function addToCart(){
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
+let existing = cart.find(
+item => item.name === "GHK-Cu 50mg"
+);
+
+if(existing){
+
+existing.quantity += 1;
+
+}else{
+
 cart.push({
 name:"GHK-Cu 50mg",
 price:180,
@@ -586,9 +596,13 @@ reviews:4,
 dosage:"50mg"
 });
 
+}
+
 localStorage.setItem("cart",JSON.stringify(cart));
 
-alert("Added to cart!");
+loadCartDrawer();
+
+document.getElementById("cartDrawer").style.right = "0";
 
 }
 <div id="cartDrawer" style="
