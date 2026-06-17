@@ -360,6 +360,39 @@ This is my second purchase since they opened because they have been loyal on eve
 </div> <!-- product-info -->
 
 </div> <!-- main container -->
+<script>
 
+function addToCart(){
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+let existing = cart.find(
+item => item.name === "Tesamorelin 10mg"
+);
+
+if(existing){
+
+existing.quantity += 1;
+
+}else{
+
+cart.push({
+name:"Tesamorelin 10mg",
+price:400,
+image:"products/tesamorelin.jpg",
+quantity:1,
+reviews:3,
+dosage:"10mg"
+});
+
+}
+
+localStorage.setItem("cart",JSON.stringify(cart));
+
+window.location.href = "index.html?openCart=true";
+
+}
+
+</script>
 </body>
 </html>
