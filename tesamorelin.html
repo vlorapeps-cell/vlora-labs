@@ -389,7 +389,9 @@ dosage:"10mg"
 
 localStorage.setItem("cart",JSON.stringify(cart));
 
-window.location.href = "index.html?openCart=true";
+loadCartDrawer();
+
+document.getElementById("cartDrawer").style.right = "0";
 
 }
 
