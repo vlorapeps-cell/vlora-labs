@@ -109,16 +109,9 @@ document.getElementById("orderItems").innerHTML = html;
 
 document.getElementById("total").innerHTML =
 "Total: AED " + total;
-
 function placeOrder(){
 
-alert(
-"Order received! We will contact you shortly."
-);
-
-localStorage.removeItem("cart");
-
-window.location.href = "index.html";
+window.location.href = "payment.html";
 
 }
 
