@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout | Vlora Labs</title>
+
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#f8fafc;
+padding:40px;
+max-width:700px;
+margin:auto;
+}
+
+h1{
+color:#00B8FF;
+margin-bottom:30px;
+}
+
+input,textarea{
+width:100%;
+padding:15px;
+margin-bottom:15px;
+border:1px solid #ddd;
+border-radius:10px;
+box-sizing:border-box;
+}
+
+button{
+width:100%;
+padding:15px;
+background:#00B8FF;
+color:white;
+border:none;
+border-radius:10px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.order-box{
+background:white;
+padding:20px;
+border-radius:15px;
+border:1px solid #e5e7eb;
+margin-bottom:20px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Checkout</h1>
+
+<div class="order-box">
+<h3>Your Order</h3>
+<div id="orderItems"></div>
+<h2 id="total">AED 0</h2>
+</div>
+
+<input id="name" placeholder="Full Name">
+
+<input id="phone" placeholder="Phone Number">
+
+<input id="email" placeholder="Email Address">
+
+<textarea
+id="address"
+placeholder="Delivery Address">
+</textarea>
+
+<button onclick="placeOrder()">
+Place Order
+</button>
+
+<script>
+
+let cart =
+JSON.parse(localStorage.getItem("cart")) || [];
+
+let total = 0;
+let html = "";
+
+cart.forEach(item=>{
+
+total += item.price * item.quantity;
+
+html += `
+<p>
+${item.name}
+x ${item.quantity}
+- AED ${item.price * item.quantity}
+</p>
+`;
+
+});
+
+document.getElementById("orderItems").innerHTML = html;
+
+document.getElementById("total").innerHTML =
+"Total: AED " + total;
+
+function placeOrder(){
+
+alert(
+"Order received! We will contact you shortly."
+);
+
+localStorage.removeItem("cart");
+
+window.location.href = "index.html";
+
+}
+
+</script>
+
+</body>
+</html>
