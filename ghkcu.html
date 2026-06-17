@@ -830,7 +830,7 @@ where("product","==","GHK-Cu 50mg")
 );
 
 const snap = await getDocs(q);
-
+console.log("Reviews found:", snap.size);
 snap.forEach(doc=>{
 
 const data = doc.data();
