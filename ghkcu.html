@@ -789,21 +789,35 @@ const db = getFirestore(app);
 
 window.submitReview = async function(){
 
-const name =
-document.getElementById("reviewName").value;
-
-const review =
-document.getElementById("reviewText").value;
-
-const rating =
-parseInt(
-document.getElementById("reviewRating").value
-);
+const name = document.getElementById("reviewName").value;
+const review = document.getElementById("reviewText").value;
+const rating = parseInt(document.getElementById("reviewRating").value);
 
 if(!name || !review){
 alert("Please fill all fields");
 return;
 }
+
+await addDoc(
+collection(db,"reviews"),
+{
+product:"GHK-Cu 50mg",
+name:name,
+review:review,
+rating:rating
+}
+);
+
+alert("Review submitted!");
+
+document.getElementById("reviewName").value="";
+document.getElementById("reviewText").value="";
+
+loadReviews();
+
+}
+
+async function loadReviews(){
 
 const reviewsDiv =
 document.getElementById("firebaseReviews");
@@ -847,17 +861,7 @@ ${"★".repeat(data.rating)}
 });
 
 }
-await addDoc(
-collection(db,"reviews"),
-{
-product:"GHK-Cu 50mg",
-name:name,
-review:review,
-rating:rating
-}
-);
 
-alert("Review submitted!");
 loadReviews();
 document.getElementById("reviewName").value="";
 document.getElementById("reviewText").value="";
