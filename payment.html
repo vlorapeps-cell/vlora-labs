@@ -172,6 +172,64 @@ alert(
 }
 
 </script>
+<script type="module">
 
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+import {
+getFirestore,
+collection,
+addDoc
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+const firebaseConfig = {
+apiKey: "PASTE YOUR API KEY HERE",
+authDomain: "vloralabs.firebaseapp.com",
+projectId: "vloralabs",
+storageBucket: "vloralabs.firebasestorage.app",
+messagingSenderId: "885798615346",
+appId: "PASTE YOUR APP ID HERE"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+window.saveOrder = async function(paymentMethod){
+
+const orderInfo =
+JSON.parse(localStorage.getItem("orderInfo")) || {};
+
+const cart =
+JSON.parse(localStorage.getItem("cart")) || [];
+
+let total = 0;
+
+cart.forEach(item=>{
+total += item.price * item.quantity;
+});
+
+await addDoc(
+collection(db,"orders"),
+{
+orderNumber:
+"VL" + Date.now(),
+
+paymentMethod,
+
+customer: orderInfo,
+
+items: cart,
+
+total,
+
+status: "Pending",
+
+createdAt: new Date().toISOString()
+}
+);
+
+};
+
+</script>
 </body>
 </html>
