@@ -129,7 +129,7 @@ After payment, send the receipt on WhatsApp:
 
 }
   
-function whatsappPayment(){
+async function whatsappPayment(){
 
 let cart =
 JSON.parse(localStorage.getItem("cart")) || [];
