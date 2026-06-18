@@ -114,7 +114,9 @@ window.open(
 }
 
 
-function bankTransfer(){
+async function bankTransfer(){
+
+await saveOrder("Bank Transfer");
 
 alert(
 `Bank Transfer Details
@@ -130,7 +132,7 @@ After payment, send the receipt on WhatsApp:
 }
   
 async function whatsappPayment(){
-
+await saveOrder("WhatsApp");
 let cart =
 JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -165,7 +167,9 @@ window.open(
 
 }
 
-function cashOnDelivery(){
+async function cashOnDelivery(){
+
+await saveOrder("Cash On Delivery");
 
 alert(
 "Cash on Delivery selected. AED 30 COD fee will be added."
@@ -190,7 +194,7 @@ authDomain: "vloralabs.firebaseapp.com",
 projectId: "vloralabs",
 storageBucket: "vloralabs.firebasestorage.app",
 messagingSenderId: "885798615346",
-appId: "PASTE YOUR APP ID HERE"
+appId: "1:885798615346:web:3513704c3c4fd291a2ff2b"
 };
 
 const app = initializeApp(firebaseConfig);
