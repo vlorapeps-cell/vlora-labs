@@ -111,8 +111,35 @@ alert(
 
 function whatsappPayment(){
 
+let cart =
+JSON.parse(localStorage.getItem("cart")) || [];
+
+let message =
+"Hello Vlora Labs,%0A%0A";
+
+message += "I would like to place an order:%0A%0A";
+
+let total = 0;
+
+cart.forEach(item=>{
+
+message +=
+"- " + item.name +
+" x" + item.quantity +
+" (AED " +
+(item.price * item.quantity) +
+")%0A";
+
+total += item.price * item.quantity;
+
+});
+
+message +=
+"%0AOrder Total: AED " +
+total;
+
 window.open(
-"https://wa.me/971502307917",
+"https://wa.me/971502307917?text=" + message,
 "_blank"
 );
 
