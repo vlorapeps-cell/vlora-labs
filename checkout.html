@@ -111,6 +111,39 @@ document.getElementById("total").innerHTML =
 "Total: AED " + total;
 function placeOrder(){
 
+const orderInfo = {
+
+firstName:
+document.getElementById("firstName").value,
+
+lastName:
+document.getElementById("lastName").value,
+
+phone:
+document.getElementById("phone").value,
+
+email:
+document.getElementById("email").value,
+
+city:
+document.getElementById("city").value,
+
+street:
+document.getElementById("street").value,
+
+building:
+document.getElementById("building").value,
+
+notes:
+document.getElementById("address").value
+
+};
+
+localStorage.setItem(
+"orderInfo",
+JSON.stringify(orderInfo)
+);
+
 window.location.href = "payment.html";
 
 }
