@@ -102,7 +102,9 @@ total += item.price * item.quantity;
 document.getElementById("total").innerHTML =
 "AED " + total;
 
-function applePay(){
+async function applePay(){
+
+await saveOrder("Ziina");
 
 window.open(
 "https://pay.ziina.com/vloralabs?source=app",
