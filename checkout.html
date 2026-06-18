@@ -110,7 +110,21 @@ document.getElementById("orderItems").innerHTML = html;
 document.getElementById("total").innerHTML =
 "Total: AED " + total;
 function placeOrder(){
+if(
+!document.getElementById("firstName").value ||
+!document.getElementById("lastName").value ||
+!document.getElementById("phone").value ||
+!document.getElementById("email").value ||
+!document.getElementById("city").value ||
+!document.getElementById("street").value ||
+!document.getElementById("building").value
+){
 
+alert("Please fill all required fields.");
+
+return;
+
+}
 const orderInfo = {
 
 firstName:
